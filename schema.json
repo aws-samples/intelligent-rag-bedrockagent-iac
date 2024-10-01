@@ -1,0 +1,108 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+      "title": "BMI Calculator",
+      "description": "Lambda function to calculate Body Mass Index (BMI)",
+      "version": "1.0.0"
+  },
+  "paths": {
+      "/calculate_bmi": {
+          "post": {
+              "summary": "Calculate BMI",
+              "description": "Calculates the Body Mass Index (BMI) based on weight and height",
+              "operationId": "calculate_bmi",
+              "requestBody": {
+                  "required": true,
+                  "content": {
+                      "application/json": {
+                          "schema": {
+                              "type": "object",
+                              "required": [
+                                  "weight",
+                                  "height"
+                              ],
+                              "properties": {
+                                  "weight": {
+                                      "type": "number",
+                                      "description": "Weight in kilograms",
+                                      "example": 70
+                                  },
+                                  "height": {
+                                      "type": "number",
+                                      "description": "Height in meters",
+                                      "example": 1.75
+                                  }
+                              }
+                          }
+                      }
+                  }
+              },
+              "responses": {
+                  "200": {
+                      "description": "Successful BMI calculation",
+                      "content": {
+                          "application/json": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "statusCode": {
+                                          "type": "integer",
+                                          "example": 200
+                                      },
+                                      "body": {
+                                          "type": "string",
+                                          "description": "JSON string containing the BMI result",
+                                          "example": "{\"bmi\": 22.86}"
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  },
+                  "400": {
+                      "description": "Bad request - missing or invalid parameters",
+                      "content": {
+                          "application/json": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "statusCode": {
+                                          "type": "integer",
+                                          "example": 400
+                                      },
+                                      "body": {
+                                          "type": "string",
+                                          "description": "Error message",
+                                          "example": "\"Missing parameter: weight\""
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  },
+                  "500": {
+                      "description": "Internal server error",
+                      "content": {
+                          "application/json": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "statusCode": {
+                                          "type": "integer",
+                                          "example": 500
+                                      },
+                                      "body": {
+                                          "type": "string",
+                                          "description": "Error message",
+                                          "example": "\"An unexpected error occurred\""
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+}
