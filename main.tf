@@ -5,8 +5,8 @@
 
 module "knowledge_base_bucket" {
   source                                = "./modules/s3"
-  kb_bucket_name_prefix                 = "kb-bucket-${var.app_region}-${var.env_name}"
-  log_bucket_name_prefix                = "kb-accesslog-bucket-${var.app_region}-${var.env_name}"
+  kb_bucket_name_prefix                 = "kb-${var.app_region}-${var.env_name}"
+  log_bucket_name_prefix                = "kb-accesslog-${var.app_region}-${var.env_name}"
   kb_bucket_log_bucket_directory_prefix = "log-${var.app_region}-${var.env_name}"
   kms_key_id                            = var.kms_key_id
   enable_access_logging                 = var.enable_access_logging
