@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 output "knowledge_base_arn" {
   value       = aws_bedrockagent_knowledge_base.sample_kb.arn
   description = "Knowleddge Base Name"

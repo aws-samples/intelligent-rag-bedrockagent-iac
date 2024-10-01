@@ -2,6 +2,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 variable "kb_bucket_name_prefix" {
   type        = string
   description = "Prefix for the S3 Bucket's name, ensuring it's full name is unique"

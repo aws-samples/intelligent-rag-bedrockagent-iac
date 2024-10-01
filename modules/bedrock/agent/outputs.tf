@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 output "bedrock_agent_arn" {
   value       = aws_bedrockagent_agent.bedrock_agent.agent_arn
   description = "Bedrock Agent ARN"

@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 resource "time_sleep" "aws_iam_role_policy_bedrock_sample_kb_oss" {
   create_duration = "30s"
   depends_on      = [aws_iam_role_policy.bedrock_sample_kb_oss]

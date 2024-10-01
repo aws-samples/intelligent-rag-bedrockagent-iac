@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 resource "aws_bedrockagent_agent" "bedrock_agent" {
   agent_name                  = var.agent_name
   agent_resource_role_arn     = var.agent_role_arn

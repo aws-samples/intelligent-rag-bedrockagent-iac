@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 resource "aws_opensearchserverless_collection" "sample_aoss_collection" {
   name = var.aoss_collection_name
   type = var.aoss_collection_type

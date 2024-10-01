@@ -1,6 +1,7 @@
 ## Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 ## SPDX-License-Identifier: MIT-0
 
+
 from time import time
 from aws_lambda_powertools import Logger, Tracer
 from aws_lambda_powertools.event_handler import BedrockAgentResolver

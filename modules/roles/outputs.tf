@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 output "bedrock_agent_role_name" {
   value       = aws_iam_role.bedrock_iam_role.name
   description = "Bedrock Agent Role Name"

@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 resource "aws_bedrock_guardrail" "this" {
   name                      = var.name
   kms_key_arn               = var.kms_key_id

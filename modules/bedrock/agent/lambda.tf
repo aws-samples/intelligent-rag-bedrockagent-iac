@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT-0
 
 
+
 resource "aws_sqs_queue" "bi_chatbot_container_lambda_dql" {
   name              = "bi-chatbot-container-lambda-dlq-${var.app_name}-${var.env_name}"
   kms_master_key_id = var.kms_key_id
@@ -55,11 +56,11 @@ resource "aws_lambda_function" "bi_chatbot_container_lambda" {
   reserved_concurrent_executions = "-1"
   timeout                        = 300
   publish                        = true
-# make sure Lambda code is available at below Amazon S3 bucket/location before code is deployed  
-  s3_bucket                      = var.code_base_bucket 
-  s3_key                         = var.code_base_zip
-  package_type                   = "Zip"
-  memory_size                    = 1024
+  # make sure Lambda code is available at below Amazon S3 bucket/location before code is deployed  
+  s3_bucket    = var.code_base_bucket
+  s3_key       = var.code_base_zip
+  package_type = "Zip"
+  memory_size  = 1024
   layers = [
     "arn:aws:lambda:${local.region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:60"
   ]

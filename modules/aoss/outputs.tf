@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 output "aoss_collection_arn" {
   value       = aws_opensearchserverless_collection.sample_aoss_collection.arn
   description = "Knowleddge Base AOSS Collection ARN"

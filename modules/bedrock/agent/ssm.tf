@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 resource "aws_ssm_parameter" "bedrock_agent_id" {
   name        = "${var.agent_name}-id"
   description = "Bedrock Agent ID"

@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 resource "aws_opensearchserverless_access_policy" "sample_kb_aoss_policy" {
   name = "aoss-kb-policy-${var.app_name}-${var.env_name}"
   type = "data"

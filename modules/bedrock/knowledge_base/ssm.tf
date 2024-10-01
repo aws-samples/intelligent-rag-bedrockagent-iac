@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 resource "aws_ssm_parameter" "knowledge_base_id" {
   name        = "${var.knowledge_base_name}-kb-id"
   description = "Bedrock Knowledge Base ID"

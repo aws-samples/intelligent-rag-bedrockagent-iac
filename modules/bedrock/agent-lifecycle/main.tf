@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 data "aws_region" "this" {}
 
 data "aws_ssm_parameter" "bedrock_agent_instruction_ssm_history" {

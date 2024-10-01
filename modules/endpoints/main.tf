@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 resource "aws_security_group" "endpoint_security_group" {
   name        = "vpc-endpoint-security-group-${var.app_name}-${var.env_name}"
   vpc_id      = var.vpc_id

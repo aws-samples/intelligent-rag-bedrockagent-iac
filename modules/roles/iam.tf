@@ -2,6 +2,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 resource "aws_iam_role" "bedrock_iam_role" {
   assume_role_policy = data.aws_iam_policy_document.bedrock_agent_trust.json
   name               = "bedrock-agent-role-${var.app_name}-${var.env_name}"

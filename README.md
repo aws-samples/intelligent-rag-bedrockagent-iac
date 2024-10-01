@@ -1,3 +1,6 @@
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
 ## Introduction
 
 This solution serves as a foundational framework that can be customized and expanded to develop robust, scalable, and efficient chatbot applications on the AWS Cloud using Amazon Bedrock services. At the end, you'll gain the ability to automate the provisioning of essential components required for a GenAI chatbot for example, such as Amazon Bedrock Agents, Knowledge Bases for Amazon,  Amazon Managed OpenSearch Serverless (AOSS) , AWS Lambda, Amazon S3 buckets for Bedrock Knowledge bases and right IAM roles required to permit and link all the services mentioned.
@@ -23,7 +26,7 @@ The blog post also deep dives into automated custom logic lifecycle to prepare a
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.64 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.69 |
 | <a name="requirement_external"></a> [external](#requirement\_external) | 2.3.3 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | 3.6.2 |
 

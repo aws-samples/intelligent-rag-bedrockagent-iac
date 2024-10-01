@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 resource "aws_s3_bucket" "sample_kb_bucket" {
   bucket        = var.kb_bucket_name_prefix
   force_destroy = true

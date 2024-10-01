@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+
 variable "knowledge_base_name" {
   description = "Name of the Bedrock Knowledge Base"
   type        = string
