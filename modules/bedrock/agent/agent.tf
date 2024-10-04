@@ -11,65 +11,67 @@ resource "aws_bedrockagent_agent" "bedrock_agent" {
   foundation_model            = var.agent_model_id
   description                 = var.agent_description
   instruction                 = var.agent_instructions
-  # Advanced Prompts
-  prompt_override_configuration {
-    prompt_configurations {
-      base_prompt_template = file("${path.module}/prompt_templates/pre_processing.txt")
-      inference_configuration {
-        max_length     = 4096
-        stop_sequences = ["\n\nHuman:"]
-        temperature    = 0
-        top_k          = 250
-        top_p          = 1
-      }
-      parser_mode          = "DEFAULT"
-      prompt_creation_mode = "OVERRIDDEN"
-      prompt_state         = "ENABLED"
-      prompt_type          = "PRE_PROCESSING"
-    }
-    prompt_configurations {
-      base_prompt_template = file("${path.module}/prompt_templates/orchestration.txt")
-      inference_configuration {
-        max_length     = 4096
-        stop_sequences = ["\n\nHuman:"]
-        temperature    = 0
-        top_k          = 250
-        top_p          = 1
-      }
-      parser_mode          = "DEFAULT"
-      prompt_creation_mode = "OVERRIDDEN"
-      prompt_state         = "ENABLED"
-      prompt_type          = "ORCHESTRATION"
-    }
-    prompt_configurations {
-      base_prompt_template = file("${path.module}/prompt_templates/kb_resp_gen.txt")
-      inference_configuration {
-        max_length     = 4096
-        stop_sequences = ["\n\nHuman:"]
-        temperature    = 0
-        top_k          = 250
-        top_p          = 1
-      }
-      parser_mode          = "DEFAULT"
-      prompt_creation_mode = "OVERRIDDEN"
-      prompt_state         = "ENABLED"
-      prompt_type          = "KNOWLEDGE_BASE_RESPONSE_GENERATION"
-    }
-    prompt_configurations {
-      base_prompt_template = file("${path.module}/prompt_templates/post_processing.txt")
-      inference_configuration {
-        max_length     = 4096
-        stop_sequences = ["\n\nHuman:"]
-        temperature    = 0
-        top_k          = 250
-        top_p          = 1
-      }
-      parser_mode          = "DEFAULT"
-      prompt_creation_mode = "OVERRIDDEN"
-      prompt_state         = "ENABLED"
-      prompt_type          = "POST_PROCESSING"
-    }
-  }
+
+  # ADVANCED PROMPTS (OPTIONAL)
+  
+  # prompt_override_configuration {
+  #   prompt_configurations {
+  #     base_prompt_template = file("${path.module}/prompt_templates/pre_processing.txt")
+  #     inference_configuration {
+  #       max_length     = 4096
+  #       stop_sequences = ["\n\nHuman:"]
+  #       temperature    = 0
+  #       top_k          = 250
+  #       top_p          = 1
+  #     }
+  #     parser_mode          = "DEFAULT"
+  #     prompt_creation_mode = "OVERRIDDEN"
+  #     prompt_state         = "ENABLED"
+  #     prompt_type          = "PRE_PROCESSING"
+  #   }
+  #   prompt_configurations {
+  #     base_prompt_template = file("${path.module}/prompt_templates/orchestration.txt")
+  #     inference_configuration {
+  #       max_length     = 4096
+  #       stop_sequences = ["\n\nHuman:"]
+  #       temperature    = 0
+  #       top_k          = 250
+  #       top_p          = 1
+  #     }
+  #     parser_mode          = "DEFAULT"
+  #     prompt_creation_mode = "OVERRIDDEN"
+  #     prompt_state         = "ENABLED"
+  #     prompt_type          = "ORCHESTRATION"
+  #   }
+  #   prompt_configurations {
+  #     base_prompt_template = file("${path.module}/prompt_templates/kb_resp_gen.txt")
+  #     inference_configuration {
+  #       max_length     = 4096
+  #       stop_sequences = ["\n\nHuman:"]
+  #       temperature    = 0
+  #       top_k          = 250
+  #       top_p          = 1
+  #     }
+  #     parser_mode          = "DEFAULT"
+  #     prompt_creation_mode = "OVERRIDDEN"
+  #     prompt_state         = "ENABLED"
+  #     prompt_type          = "KNOWLEDGE_BASE_RESPONSE_GENERATION"
+  #   }
+  #   prompt_configurations {
+  #     base_prompt_template = file("${path.module}/prompt_templates/post_processing.txt")
+  #     inference_configuration {
+  #       max_length     = 4096
+  #       stop_sequences = ["\n\nHuman:"]
+  #       temperature    = 0
+  #       top_k          = 250
+  #       top_p          = 1
+  #     }
+  #     parser_mode          = "DEFAULT"
+  #     prompt_creation_mode = "OVERRIDDEN"
+  #     prompt_state         = "ENABLED"
+  #     prompt_type          = "POST_PROCESSING"
+  #   }
+  # }
 }
 
 resource "aws_bedrockagent_agent_action_group" "bedrock_agent_actiongroup" {
