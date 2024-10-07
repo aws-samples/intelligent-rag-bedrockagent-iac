@@ -39,7 +39,7 @@ git clone "git@github.com:aws-samples/intelligent-rag-bedrockagent-iac.git"
 ```
 2. Navigate into the project base directory
 ```
-cd one-click-genai-terraform
+cd intelligent-rag-bedrockagent-iac
 ```
 3. Initialize terraform 
 ```
@@ -54,7 +54,9 @@ terraform plan
 terraform apply --auto-approve
 ```
 6. After apply is successful, the "knowledge_base_bucket" will be given as one of the outputs. Upload the sample-datasource.txt into this bucket.
-7. Go to Amazon Bedrock console-> Knowledgebases->Click on the newly created KB-> Datasource-> Click on sync. For more details check [this](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-data-source-sync-ingest.html) documentation.
+7. Go to Amazon Bedrock console-> Knowledgebases->Click on the newly created KB-> Datasource-> Click on sync. For more details check [this](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-data-source-sync-ingest.html) documentation. 
+
+Also make sure the `user input` is enabled in Agent!
 
 
 ## Infrastructure cleanup
@@ -62,7 +64,7 @@ For the cleanup of the insfrastructure please follow below steps:
 1. Empty the datsource S3 Bucket
 2. Navigate into the project base directory
 ``` 
-cd one-click-genai-terraform
+cd intelligent-rag-bedrockagent-iac
 ```
 3. The flag --auto-approve is optional. If you don't use that, you will be prompted to enter a confirmation manually (Y/N) 
 terraform --destroy --auto-approve
