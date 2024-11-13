@@ -22,6 +22,8 @@ The blog post also deep dives into automated custom logic lifecycle to prepare a
 7. The models used in this solution are Amazon Titan Text V2 and Claude3 Haiku. Please make sure that these are enabled in the account before deploying the code.
 8. Cross check the region and the model access before deploying this.
 9. A regulated VPC as per the best practices from the AWS Well Architected Framework.
+10. A KMS key with security best practices
+    
 
 ## Software Requirements
 
@@ -49,6 +51,8 @@ terraform init
 ```
 terraform plan
 ```
+**Note:** Make sure to check the `*tfvars` file and update relevant values before creating a plan. The code needs an existing VPC, KMS Key and an S3 bucket which is used as a source to deploy the Bedrock Action Group Lambda Function.
+
 5. Run terraform apply. The flag --auto-approve is optional. If you don't use that, you will be prompted to enter a confirmation manually (Y/N)
 ```
 terraform apply --auto-approve
