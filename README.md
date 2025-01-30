@@ -23,6 +23,8 @@ The blog post also deep dives into automated custom logic lifecycle to prepare a
 8. Cross check the region and the model access before deploying this.
 9. A regulated VPC as per the best practices from the AWS Well Architected Framework.
 10. A KMS key with security best practices
+11. The AWS Lambda funtion code base need to be uploaded into an Amazon S3 bucket in variable `code_base_bucket` and Zip file name to be updated in another variable called `code_base_zip`.
+12. Mase sure the read and understand the `terraform.tfvars` file (which is provided as sample) and modify accordingly to suit your requirements. 
     
 
 ## Software Requirements
