@@ -115,6 +115,7 @@ module "vpc_endpoints" {
   app_name                              = var.app_name
 }
 
+# Optional
 module "agent_update_lifecycle" {
   source                                  = "./modules/bedrock/agent-lifecycle"
   code_base_bucket                        = var.code_base_bucket
@@ -128,5 +129,5 @@ module "agent_update_lifecycle" {
   ssm_parameter_agent_instruction_history = module.bedrock_agent.ssm_parameter_agent_instruction_history
   ssm_parameter_kb_instruction_history    = module.bedrock_knowledge_base.ssm_parameter_kb_instruction_history
   lambda_function_name                    = module.bedrock_agent.lambda_function_name
-  depends_on                              = [module.knowledge_base_bucket, module.roles, module.aoss, module.bedrock_knowledge_base, module.bedrock_agent, module.bedrock_guardrail[0], module.vpc_endpoints[0]]
+  depends_on                              = [module.knowledge_base_bucket, module.roles, module.aoss, module.bedrock_knowledge_base, module.bedrock_agent, module.bedrock_guardrail[0]]
 }
