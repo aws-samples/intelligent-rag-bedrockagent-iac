@@ -113,7 +113,6 @@ module "vpc_endpoints" {
   enable_bedrock_agent_runtime_endpoint = true
   env_name                              = var.env_name
   app_name                              = var.app_name
-  depends_on                            = [module.knowledge_base_bucket, module.roles, module.aoss, module.bedrock_knowledge_base, module.bedrock_agent, module.bedrock_guardrail[0]]
 }
 
 module "agent_update_lifecycle" {
